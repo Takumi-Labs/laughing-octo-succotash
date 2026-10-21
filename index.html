@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Chat App CSS Illustration</title>
   <script src="https://kit.fontawesome.com/b96b9377df.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+  <div class="background-shape"></div>
   <main>
-    <div class="background-shape"></div>
-    <section class="mobile-wrapper">
+    <section class="app-info">
+      <div class="mobile-wrapper">
       <div class="mobile-bezel"></div>
       <div class="chat-header">
         <div class="chat-info">
@@ -31,7 +36,7 @@
           </div>
         </div>
         <span class="icon">
-        <i class="fa-solid fa-ellipsis-vertical"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
         </span>
       </div>
       <div class="chat-container">
@@ -41,31 +46,48 @@
         <div class="chat-bubble you">
           Could you send over some pictures of your dog, please?
         </div>
-        <div class="thumbnails"></div>
+        <div class="thumbnails">
+          <div>
+            <img src="images/dog-image-1.jpg" alt="Dog Image 1">
+          </div>
+          <div>
+            <img src="images/dog-image-2.jpg" alt="Dog Image 2">
+          </div>
+          <div>
+            <img src="images/dog-image-3.jpg" alt="Dog Image 3">
+          </div>
+        </div>
         <div class="chat-bubble me">
           Here are a few pictures. She’s a happy girl!
         </div>
         <div class="chat-bubble me">Can you make it?</div>
-        <div class="chat-bubble you">She looks so happy! The time we discussed works. How long shall I take her out for?</div>
+        <div class="chat-bubble you">She looks so happy! The time we discussed works. How long shall I take her out for?
+        </div>
         <div class="pricing">
-          <input type="radio"/> 30 minute walk $29</div>
-        <div class="pricing"> <input type="radio"/>1 hour walk $49</div>
+          <input type="radio" id="30-minute" name="pricing" value="30"/>
+          <label for="30-minute"><span>30 minute walk</span> <span>$29</span></label>
+        </div>
+        <div class="pricing"> <input type="radio" id="1-hour" name="pricing" value="60"/>
+          <label for="1-hour"><span>1 hour walk</span> <span>$49</span></label>
+        </div>
         <div class="input-container">
-          <input type="text" placeholder="Type a message…">
+          <input type="text" id="message" name="message" placeholder="Type a message…">
           <button class="submit-button"><span class="icon"><i class="fa-solid fa-angle-right"></i></span></button>
         </div>
+      </div>
       </div>
     </section>
     <section class="service-info">
       <h2>Simple booking</h2>
-      <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-  discuss arrangements and make bookings. Once the walk has been completed you can rate 
-  your walker and book again all through the chat.</p>
+      <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to
+        discuss arrangements and make bookings. Once the walk has been completed you can rate
+        your walker and book again all through the chat.</p>
     </section>
   </main>
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </footer>
 </body>
+
 </html>

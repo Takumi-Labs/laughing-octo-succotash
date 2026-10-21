@@ -42,7 +42,7 @@ main {
 }
 
 .background-shape {
-  background: linear-gradient(to bottom, var(--color-pink-500), var(--color-purple-500));
+  background: linear-gradient(to bottom left, var(--color-pink-500), var(--color-purple-500));
   position: absolute;
   top: 0;
   width: 50vw;
@@ -52,12 +52,13 @@ main {
 }
 
 .mobile-wrapper {
-  width: 70%;
-  margin: 0 auto;
   border: 8px solid var(--color-white);
   position: relative;
   overflow: hidden;
   border-radius: 24px;
+  max-width: 280px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-bezel {
@@ -139,23 +140,84 @@ main {
   background-color: var(--color-white);
 }
 
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.thumbnails div {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+}
+
+.thumbnails img {
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+
 .pricing {
   clear: both;
   background: linear-gradient(to top right, var(--color-purple-500), var(--color-pink-500));
   border-radius: var(--radius-md);
   border-bottom-left-radius: var(--radius-sm);
-  padding: 8px;
+  padding: 12px;
   color: var(--color-white);
   font-size: 12px;
   display: flex;
   align-items: center;
+  width: 80%;
+}
+
+.pricing label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pricing span:first-child {
+  color: var(--color-gray-300);
+  font-size: 12px;
+}
+
+.pricing span:last-child {
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 input[type="radio"] {
-  border-color: var(--color-gray-300);
-  border-width: 1;
-  padding: 0;
+   appearance: none; /* Removes native styling without breaking accessibility */
+  -webkit-appearance: none;
   margin: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 0.5px solid var(--color-gray-300); 
+  border-radius: 50%; 
+  margin-right: 0.5rem;
+  display: grid;
+  place-content: center;
+  transition: 0.15s ease-in-out;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 150ms transform ease-in-out;
+  background-color: var(--color-pink-500);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus-visible {
+  outline: 2px solid var(--color-pink-500);
+  outline-offset: 2px;
 }
 
 .input-container {
@@ -188,6 +250,10 @@ button {
   background-color: var(--color-purple-950);
 }
 
+button:hover {
+  background-color: var(--color-purple-500);
+}
+
 .service-info {
  width: 80%;
  margin: 0 auto;
@@ -214,4 +280,40 @@ button {
 
 .attribution a {
   color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width: 768px) {
+  
+  .background-shape {
+    width: 40%;
+    height: 90vh;
+    border-bottom-left-radius: 40vw;
+    border-bottom-right-radius: 40vw;
+    left: -10%;
+  }
+
+  main {
+    flex-direction: row;
+    padding: 0;
+    gap: 6rem;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-info {
+    width: auto;
+  }
+
+  .mobile-wrapper {
+    margin: 0;
+    max-width: 260px;
+  }
+
+  .service-info {
+    margin: 0;
+    width: auto;
+    text-align: left;
+    width: 30%;
+  }
 }
